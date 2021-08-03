@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for user in users %}
+        <div class="post block">
+            <h2 class="subtitle">Username: {{ user.username }}</h2>
+
+            <p>Joined at {{ user.date_joined }}</p>
+            <a href="{% url 'user_detail' user.username %}">More</a>
+        </div><hr>
+    {% endfor %}
+{% endblock %}
